@@ -1,0 +1,19 @@
+{
+  "name": "your-sims",
+  "version": "1.0.0",
+  "description": "![Color Palette](./assets/45450.png) 1.  \t#4276b7 2.      #3caad6 3.      #3cb9e1 4.      #21b96b 5.      #a6e329",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "mongoose": "^8.13.1",
+    "morgan": "^1.10.0"
+  }
+}

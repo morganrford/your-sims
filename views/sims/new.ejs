@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/stylesheet.css" />
+    <title>New Sim</title>
+  </head>
+  <body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1>Add A New Sim</h1>
+    <form action="" method="">
+      <div>
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" required />
+      </div>
+      <div>
+        <label for="photo">Photo:</label>
+        <input type="text" name="photo" id="photo" />
+      </div>
+      <div>
+        <label for="lifeStage">Life Stage:</label>
+        <select id="lifeStage" name="lifeStage" required>
+          <option value="newborn">Newborn</option>
+          <option value="infant">Infant</option>
+          <option value="toddler">Toddler</option>
+          <option value="child">Child</option>
+          <option value="teen">Teen</option>
+          <option value="youngAdult">Young Adult</option>
+          <option value="adult">adult</option>
+          <option value="elder">Elder</option>
+        </select>
+      </div>
+      <div>
+         <label for="occult">Occult:</label>
+         <select id="occult" name="occult" required>
+            <option value="human">Human</option>
+            <option value="alien">Alien</option>
+            <option value="ghost">Ghost</option>
+            <option value="mermaid">Mermaid</option>
+            <option value="servo">Servo</option>
+            <option value="spellcaster">Spellcaster</option>
+            <option value="vampire">Vampire</option>
+            <option value="werewolf">Werewolf</option>
+         </select>
+      </div>
+      <div>
+        <label for="world">World:</label>
+        <select id="world" name="world">
+          <option value="brindletonBay">Brindleton Bay</option>
+          <option value="britechester">Britechester</option>
+          <option value="chestnutRidge">Chestnut Ridge</option>
+          <option value="ciudadEnamorada">Ciudad Enamorada</option>
+          <option value="copperdale">Copperdale</option>
+          <option value="delSolValley">Del Sol Valley</option>
+          <option value="evergreenHarbor">Evergreen Harbor</option>
+          <option value="forgottenHollow">Forgotten Hollow</option>
+          <option value="glimmerbrook">Glimmerbrook</option>
+          <option value="henfordOnBagley">Henford-on-Bagley</option>
+          <option value="magnoliaPromenade">Magnolia Promenade</option>
+          <option value="moonwoodMill">Moonwood Mill</option>
+          <option value="mtKomorebi">Mt. Komorebi</option>
+          <option value="newcrest">Newcrest</option>
+          <option value="nordhaven">Nordhaven</option>
+          <option value="oasisSprings">Oasis Springs</option>
+          <option value="ravenwood">Ravenwood</option>
+          <option value="sanMyshuno">San Myshuno</option>
+          <option value="sanSequoia">San Sequoia</option>
+          <option value="strangerVille">StrangerVille</option>
+          <option value="sulani">Sulani</option>
+          <option value="tartosa">Tartosa</option>
+          <option value="tomarang">Tomarang</option>
+          <option value="willowCreek">Willow Creek</option>
+          <option value="windenburg">Windenburg</option>
+        </select>
+      </div>
+      <div>
+        <!-- dropdown menu -->
+        <label for="career">Career:</label>
+        <input type="text" name="career" id="career" required />
+      </div>
+      <div>
+        <label for="personalityTraits">Personality Traits:</label>
+        <input type="text" name="personalityTraits" id="personalityTraits" />
+      </div>
+      <div>
+        <!-- dropdown menu -->
+        <label for="aspiration">Aspiration:</label>
+        <input type="text" name="aspiration" id="aspiration" />
+      </div>
+      <div>
+        <label for="partner">Partner:</label>
+        <input type="text" name="partner" id="partner" />
+      </div>
+      <div>
+        <label for="fashionStyle">Fashion Style:</label>
+        <input type="text" name="fashionStyle" id="fashionStyle" />
+      </div>
+      <div>
+        <label for="comments">Comments:</label>
+        <textarea name="comments" id="comments"></textarea>
+      </div>
+    </form>
+  </body>
+</html>
