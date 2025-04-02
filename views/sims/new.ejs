@@ -9,6 +9,7 @@
   <body>
     <%- include('../partials/_navbar.ejs') %>
     <h1>Add A New Sim</h1>
+    <!-- need to finish this -->
     <form action="" method="">
       <div>
         <label for="name">Name:</label>
@@ -75,31 +76,82 @@
         </select>
       </div>
       <div>
-        <!-- dropdown menu -->
         <label for="career">Career:</label>
-        <input type="text" name="career" id="career" required />
+        <select id="career" name="career" required>
+          <option value="unemployed">Unemployed</option>
+          <option value="selfEmployed">Self-Employed</option>
+          <option value="actor">Actor</option>
+          <option value="astronaut">Astronaut</option>
+          <option value="athlete">Athlete</option>
+          <option value="babysitter">Babysitter</option>
+          <option value="barista">Barista</option>
+          <option value="business">Business</option>
+          <option value="civilDesigner">Civil Designer</option>
+          <option value="criminal">Criminal</option>
+          <option value="critic">Critic</option>
+          <option value="conservationist">Conservationist</option>
+          <option value="culinary">Culinary</option>
+          <option value="detective">Detective</option>
+          <option value="diver">Diver</option>
+          <option value="doctor">Doctor</option>
+          <option value="education">Education</option>
+          <option value="engineer">Engineer</option>
+          <option value="entertainer">Entertainer</option>
+          <option value="fastFoodEmployee">Fast Food Employee</option>
+          <option value="fisherman">Fisherman</option>
+          <option value="freelancer">Freelancer</option>
+          <option value="gardener">Gardener</option>
+          <option value="handyperson">Handyperson</option>
+          <option value="interiorDecorator">Interior Decorator</option>
+          <option value="law">Law</option>
+          <option value="lifeguard">Lifeguard</option>
+          <option value="manualLaborer">Manual Laborer</option>
+          <option value="military">Military</option>
+          <option value="painter">Painter</option>
+          <option value="politician">Politician</option>
+          <option value="reaper">Reaper</option>
+          <option value="retailEmployee">Retail Employee</option>
+          <option value="romanceConsultant">Romance Consultant</option>
+          <option value="salaryperson">Salaryperson</option>
+          <option value="scientist">Scientist</option>
+          <option value="secretAgent">Secret Agent</option>
+          <option value="simfluencer">Simfluencer</option>
+          <option value="socialMedia">Social Media</option>
+          <option value="styleInfluencer">Style Influencer</option>
+          <option value="tattooArtist">Tattoo Artist</option>
+          <option value="techGuru">Tech Guru</option>
+          <option value="undertaker">Undertaker</option>
+          <option value="videoGameStreamer">Video Game Streamer</option>
+          <option value="writer">Writer</option>
+        </select>
       </div>
       <div>
         <label for="personalityTraits">Personality Traits:</label>
         <input type="text" name="personalityTraits" id="personalityTraits" />
       </div>
       <div>
-        <!-- dropdown menu -->
         <label for="aspiration">Aspiration:</label>
-        <input type="text" name="aspiration" id="aspiration" />
-      </div>
-      <div>
-        <label for="partner">Partner:</label>
-        <input type="text" name="partner" id="partner" />
+        <select id="aspiration" name="aspiration" >
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        </select>
       </div>
       <div>
         <label for="fashionStyle">Fashion Style:</label>
         <input type="text" name="fashionStyle" id="fashionStyle" />
       </div>
       <div>
+        <label for="partner">Partner(s):</label>
+        <input type="text" name="partner" id="partner" />
+      </div>
+      <div>
         <label for="comments">Comments:</label>
         <textarea name="comments" id="comments"></textarea>
       </div>
+      <!-- submit button -->
     </form>
   </body>
 </html>
