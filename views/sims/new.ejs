@@ -9,8 +9,8 @@
   <body>
     <%- include('../partials/_navbar.ejs') %>
     <h1>Add A New Sim</h1>
-    <!-- need to finish this -->
-    <form action="" method="">
+    <form action="/users/<%= user._id %>/sims" method="POST">
+      <!-- need to show to the user which fields are required -->
       <div>
         <label for="name">Name:</label>
         <input type="text" name="name" id="name" required />
@@ -28,7 +28,7 @@
           <option value="child">Child</option>
           <option value="teen">Teen</option>
           <option value="youngAdult">Young Adult</option>
-          <option value="adult">adult</option>
+          <option value="adult">Adult</option>
           <option value="elder">Elder</option>
         </select>
       </div>
@@ -132,11 +132,92 @@
       <div>
         <label for="aspiration">Aspiration:</label>
         <select id="aspiration" name="aspiration" >
-        <option value=""></option>
-        <option value=""></option>
-        <option value=""></option>
-        <option value=""></option>
-        <option value=""></option>
+        <option value="academic">Academic</option>
+        <option value="anglingAce">Angling Ace</option>
+        <option value="applianceWiz">Appliance Wiz</option>
+        <option value="archaeologyScholar">Archaeology Scholar</option>
+        <option value="beachLife">Beach Life</option>
+        <option value="bestsellingAuthor">Bestselling Author</option>
+        <option value="bigHappyFamily">Big Happy Family</option>
+        <option value="bodybuilder">Bodybuilder</option>
+        <option value="championshipRider">Championship Rider</option>
+        <option value="chiefOfMischief">Chief of Mischief</option>
+        <option value="cityNative">City Native</option>
+        <option value="computerWhiz">Computer Whiz</option>
+        <option value="countryCaretaker">Country Caretaker</option>
+        <option value="crystalCrafter">Crystal Crafter</option>
+        <option value="cureSeeker">Cure Seeker</option>
+        <option value="discerningDweller">Discerning Dweller</option>
+        <option value="emissaryOfTheCollective">Emissary of the Collective</option>
+        <option value="ecoInnovator">Eco Innovator</option>
+        <option value="enforcerOfOrder">Enforcer of Order</option>
+        <option value="expertNectarMaker">Expert Nectar Maker</option>
+        <option value="fabulouslyFilthy">Fabulously Filthy</option>
+        <option value="fabulouslyWealthy">Fabulously Wealthy</option>
+        <option value="fiveStarPropertyOwner">Five-Star Property Owner</option>
+        <option value="friendOfTheAnimals">Friend of the Animals</option>
+        <option value="friendOfTheWorld">Friend of the World</option>
+        <option value="fountOfTomaraniKnowledge">Fount of Tomarani Knowledge</option>
+        <option value="galacticPrivateer">Galactic Privateer</option>
+        <option value="ghostHistorian">Ghost Historian</option>
+        <option value="goodVampire">Good Vampire</option>
+        <option value="hopeVsOrder">Hope VS Order</option>
+        <option value="innerPeace">Inner Peace</option>
+        <option value="jokeStar">Joke Star</option>
+        <option value="jungleExplorer">Jungle Explorer</option>
+        <option value="leaderOfThePack">Leader of the Pack</option>
+        <option value="loneWolf">Lone Wolf</option>
+        <option value="lordLadyOfTheKnits">Lord/Lady of the Knits</option>
+        <option value="mansionBaron">Mansion Baron</option>
+        <option value="marketMagnate">Market Magnate</option>
+        <option value="masterActorMasterActress">Master Actor/Master Actress</option>
+        <option value="masterChef">Master Chef</option>
+        <option value="masterMentor">Master Mentor</option>
+        <option value="masterMaker">Master Maker</option>
+        <option value="masterMixologist">Master Mixologist</option>
+        <option value="masterVampire">Master Vampire</option>
+        <option value="musicalGenius">Musical Genius</option>
+        <option value="mtKomorebiSightseer">Mt. Komorebi Sightseer</option>
+        <option value="neighborhoodConfidante">Neighborhood Confidante</option>
+        <option value="nerdBrain">Nerd Brain</option>
+        <option value="paragonOfHope">Paragon of Hope</option>
+        <option value="paragonPartner">Paragon Partner</option>
+        <option value="painterExtraordinaire">Painter Extraordinaire</option>
+        <option value="partyAnimal">Party Animal</option>
+        <option value="perfectlyPristine">Perfectly Pristine</option>
+        <option value="publicEnemy">Public Enemy</option>
+        <option value="purveyorOfPotions">Purveyor of Potions</option>
+        <option value="renaissanceSim">Renaissance Sim</option>
+        <option value="romanticExplorer">Romantic Explorer</option>
+        <option value="seekerOfSecrets">Seeker of Secrets</option>
+        <option value="serialRomantic">Serial Romantic</option>
+        <option value="selfCareSpecialist">Self-Care Specialist</option>
+        <option value="stickyFingers">Sticky Fingers</option>
+        <option value="strangerVilleMystery">StrangerVille Mystery</option>
+        <option value="soulmate">Soulmate</option>
+        <option value="superParent">Super Parent</option>
+        <option value="successfulLineage">Successful Lineage</option>
+        <option value="spellcraftAndSorcery">Spellcraft & Sorcery</option>
+        <option value="theCurator">The Curator</option>
+        <option value="thePositivityChallenge">The Positivity Challenge</option>
+        <option value="vampireFamily">Vampire Family</option>
+        <option value="villainousValentine">Villainous Valentine</option>
+        <option value="wildfangRenegade">Wildfang Renegade</option>
+        <option value="werewolfInitiate">Werewolf Initiate</option>
+        <option value="worldFamousCelebrity">World-Famous Celebrity</option>
+        <option value="zenGuru">Zen Guru</option>
+        <option value="artisticProdigy">Artistic Prodigy (Child)</option>
+        <option value="creativeGenius">Creative Genius (Child)</option>
+        <option value="mindAndBody">Mind and Body (Child)</option>
+        <option value="playtimeCaptain">Playtime Captain (Child)</option>
+        <option value="rambunctiousScamp">Rambunctious Scamp (Child)</option>
+        <option value="slumberPartyAnimal">Slumber Party Animal (Child)</option>
+        <option value="socialButterfly">Social Butterfly (Child)</option>
+        <option value="whizKid">Whiz Kid (Child)</option>
+        <option value="admiredIcon">Admired Icon (Teen)</option>
+        <option value="dramaLlama">Drama Llama (Teen)</option>
+        <option value="goalOriented">Goal Oriented (Teen)</option>
+        <option value="liveFast">Live Fast (Teen)</option>
         </select>
       </div>
       <div>
@@ -151,7 +232,7 @@
         <label for="comments">Comments:</label>
         <textarea name="comments" id="comments"></textarea>
       </div>
-      <!-- submit button -->
+      <button type="submit">Add Sim</button>
     </form>
   </body>
 </html>

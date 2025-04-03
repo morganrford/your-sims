@@ -8,5 +8,16 @@
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
+    <h1>Welcome to Your Sims!</h1>
+    <a href="/users/<%= user._id %>/sims/new">Add A New Sim</a>
+    <ul>
+        <% sims.forEach((sim) => { %>
+            <li>
+                <a href="/users/<%= user._id %>/sims/<%= sim._id %>">
+                    <%= sim.name %>
+                </a>
+            </li>
+            <% }) %>
+    </ul>
 </body>
 </html>

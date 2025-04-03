@@ -8,28 +8,31 @@ dotenv.config()
 const mongoose = require('mongoose')
 const app = express();
 const PORT = process.env.PORT || 4000
-const Sim = require('./models/sim');
+const Sim = require('./models/schema');
 const req = require('express/lib/request');
+const session = require('express-session')
 
 const isSignedIn = require('./middleware/is-signed-in.js');
 const authController = require('./controllers/auth.js');
-const foodsController = require('./controllers/food.js');
+const simsController = require('./controllers/sims.js');
 const passUserToView = require('./middleware/pass-user-to-view.js');
 const usersController = require('./controllers/users.js')
 
+
 app.use(
-    session({
-      secret: process.env.SESSION_SECRET,
-      resave: false,
-      saveUninitialized: true,
-    })
-  );
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: true,
+  })
+);
+
 
 //Database connection
 mongoose.connect(process.env.MONGODB_URI)
 
 mongoose.connection.on('connected', ()=> {
-    console.log('connected to mongodb')
+  console.log('connected to mongodb')
 }) 
 
 //Middleware
@@ -38,25 +41,22 @@ app.use(morgan("dev"))
 app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname, "public")));
 
-//ROUTES
+app.use(passUserToView)
+app.use('/auth', authController)
+app.use(isSignedIn)
 
-//I.N.D.U.C.E.S.
+//ROUTES
 
 //Home
 
-//Index
+app.get('/', (req, res) => {
+  res.render('index.ejs', {
+    user: req.session.user,
+  });
+});
 
-//New
 
-//Delete
-
-//Update
-
-//Create
-
-//Edit
-
-//Show
+app.use('/users/:userId/sims', simsController)
 
 //Port
 app.listen(PORT, () => {
