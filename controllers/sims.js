@@ -28,7 +28,34 @@ router.get("/new", (req, res) => {
 
 //Delete
 
+router.delete('/:simId', async (req, res) => {
+  try {
+    const currentUser = await User.findById(req.session.user._id);
+    currentUser.sims.id(req.params.simId).deleteOne();
+    await currentUser.save();
+    res.redirect(`/users/${currentUser._id}/sims`);
+  } catch (error) {
+    console.log(error);
+    res.redirect('/');
+  }
+});
+
 //Update
+
+router.put('/:simId', async (req, res) => {
+  try {
+    const currentUser = await User.findById(req.session.user._id);
+    const sim = currentUser.sims.id(req.params.simId);
+    sim.set(req.body);
+    await currentUser.save();
+    res.redirect(
+      `/users/${currentUser._id}/sims/${req.params.simId}`
+    );
+  } catch (error) {
+    console.log(error);
+    res.redirect('/');
+  }
+});
 
 //Create
 
@@ -46,6 +73,20 @@ router.post("/", async (req, res) => {
   });
 
 //Edit
+
+router.get('/:simId/edit', async (req, res) => {
+  try {
+    const currentUser = await User.findById(req.session.user._id);
+    const sim = currentUser.sims.id(req.params.simId);
+    res.render('sims/edit.ejs', {
+      sim: sim,
+    });
+  } catch (error) {
+    console.log(error);
+    res.redirect('/');
+  }
+});
+
 
 //Show
 

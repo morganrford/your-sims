@@ -11,4 +11,15 @@ router.get('/', async (req, res) => {
   });
 });
 
+
+router.get('/:userId', async (req, res) => {
+  try {
+    const currentUser = await User.findById(req.params.userId)
+    res.render('./views/users/index.ejs', { sims: currentUser.sim, user: currentUser})
+  } catch (error) {
+    console.log(error)
+    res.redirect('/')
+  } 
+})
+
 module.exports = router;

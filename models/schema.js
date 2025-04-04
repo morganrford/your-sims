@@ -17,6 +17,10 @@ const simSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    sexuality: {
+        type: String,
+        required: true,
+    },
     world: {
         type: String,
         required: false,

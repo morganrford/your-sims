@@ -11,6 +11,7 @@ const PORT = process.env.PORT || 4000
 const Sim = require('./models/schema');
 const req = require('express/lib/request');
 const session = require('express-session')
+const User = require("./models/schema.js");
 
 const isSignedIn = require('./middleware/is-signed-in.js');
 const authController = require('./controllers/auth.js');
@@ -49,14 +50,17 @@ app.use(isSignedIn)
 
 //Home
 
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
+  const users = await User.find()
   res.render('index.ejs', {
     user: req.session.user,
+    users: users,
   });
 });
 
 
 app.use('/users/:userId/sims', simsController)
+app.use('/users', usersController)
 
 //Port
 app.listen(PORT, () => {

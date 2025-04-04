@@ -4,125 +4,126 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/stylesheets/stylesheet.css" />
-    <title>New Sim</title>
+    <title>Add A New Sim</title>
   </head>
   <body>
     <%- include('../partials/_navbar.ejs') %>
     <h1>Add A New Sim</h1>
     <form action="/users/<%= user._id %>/sims" method="POST">
-      <!-- need to show to the user which fields are required -->
       <div>
-        <label for="name">Name:</label>
+        <label for="name">Name: (required)</label>
         <input type="text" name="name" id="name" required />
       </div>
       <div>
-        <label for="photo">Photo:</label>
+        <label for="photo">Photo: (photo link)</label>
         <input type="text" name="photo" id="photo" />
       </div>
       <div>
-        <label for="lifeStage">Life Stage:</label>
+        <label for="lifeStage">Life Stage: (required)</label>
         <select id="lifeStage" name="lifeStage" required>
-          <option value="newborn">Newborn</option>
-          <option value="infant">Infant</option>
-          <option value="toddler">Toddler</option>
-          <option value="child">Child</option>
-          <option value="teen">Teen</option>
-          <option value="youngAdult">Young Adult</option>
-          <option value="adult">Adult</option>
-          <option value="elder">Elder</option>
+          <option value="Newborn">Newborn</option>
+          <option value="Infant">Infant</option>
+          <option value="Toddler">Toddler</option>
+          <option value="Child">Child</option>
+          <option value="Teen">Teen</option>
+          <option value="Young Adult">Young Adult</option>
+          <option value="Adult">Adult</option>
+          <option value="Elder">Elder</option>
         </select>
       </div>
       <div>
-         <label for="occult">Occult:</label>
+         <label for="occult">Occult: (required)</label>
          <select id="occult" name="occult" required>
-            <option value="human">Human</option>
-            <option value="alien">Alien</option>
-            <option value="ghost">Ghost</option>
-            <option value="mermaid">Mermaid</option>
-            <option value="servo">Servo</option>
-            <option value="spellcaster">Spellcaster</option>
-            <option value="vampire">Vampire</option>
-            <option value="werewolf">Werewolf</option>
+            <option value="Human">Human</option>
+            <option value="Alien">Alien</option>
+            <option value="Ghost">Ghost</option>
+            <option value="Mermaid">Mermaid</option>
+            <option value="Servo">Servo</option>
+            <option value="Spellcaster">Spellcaster</option>
+            <option value="Vampire">Vampire</option>
+            <option value="Werewolf">Werewolf</option>
          </select>
       </div>
+        <label for="sexuality">Sexuality: (required)</label>
+        <input type="text" name="sexuality" id="sexuality" required />
       <div>
         <label for="world">World:</label>
         <select id="world" name="world">
-          <option value="brindletonBay">Brindleton Bay</option>
-          <option value="britechester">Britechester</option>
-          <option value="chestnutRidge">Chestnut Ridge</option>
-          <option value="ciudadEnamorada">Ciudad Enamorada</option>
-          <option value="copperdale">Copperdale</option>
-          <option value="delSolValley">Del Sol Valley</option>
-          <option value="evergreenHarbor">Evergreen Harbor</option>
-          <option value="forgottenHollow">Forgotten Hollow</option>
-          <option value="glimmerbrook">Glimmerbrook</option>
-          <option value="henfordOnBagley">Henford-on-Bagley</option>
-          <option value="magnoliaPromenade">Magnolia Promenade</option>
-          <option value="moonwoodMill">Moonwood Mill</option>
-          <option value="mtKomorebi">Mt. Komorebi</option>
-          <option value="newcrest">Newcrest</option>
-          <option value="nordhaven">Nordhaven</option>
-          <option value="oasisSprings">Oasis Springs</option>
-          <option value="ravenwood">Ravenwood</option>
-          <option value="sanMyshuno">San Myshuno</option>
-          <option value="sanSequoia">San Sequoia</option>
-          <option value="strangerVille">StrangerVille</option>
-          <option value="sulani">Sulani</option>
-          <option value="tartosa">Tartosa</option>
-          <option value="tomarang">Tomarang</option>
-          <option value="willowCreek">Willow Creek</option>
-          <option value="windenburg">Windenburg</option>
+          <option value="Brindleton Bay">Brindleton Bay</option>
+          <option value="Britechester">Britechester</option>
+          <option value="Chestnut Ridge">Chestnut Ridge</option>
+          <option value="Ciudad Enamorada">Ciudad Enamorada</option>
+          <option value="Copperdale">Copperdale</option>
+          <option value="Del Sol Valley">Del Sol Valley</option>
+          <option value="Evergreen Harbor">Evergreen Harbor</option>
+          <option value="Forgotten Hollow">Forgotten Hollow</option>
+          <option value="Glimmerbrook">Glimmerbrook</option>
+          <option value="Henford-on-Bagley">Henford-on-Bagley</option>
+          <option value="Magnolia Promenade">Magnolia Promenade</option>
+          <option value="Moonwood Mill">Moonwood Mill</option>
+          <option value="Mt. Komorebi">Mt. Komorebi</option>
+          <option value="Newcrest">Newcrest</option>
+          <option value="Nordhaven">Nordhaven</option>
+          <option value="Oasis Springs">Oasis Springs</option>
+          <option value="Ravenwood">Ravenwood</option>
+          <option value="San Myshuno">San Myshuno</option>
+          <option value="San Sequoia">San Sequoia</option>
+          <option value="StrangerVille">StrangerVille</option>
+          <option value="Sulani">Sulani</option>
+          <option value="Tartosa">Tartosa</option>
+          <option value="Tomarang">Tomarang</option>
+          <option value="Willow Creek">Willow Creek</option>
+          <option value="Windenburg">Windenburg</option>
         </select>
       </div>
       <div>
-        <label for="career">Career:</label>
+        <label for="career">Career: (required)</label>
         <select id="career" name="career" required>
-          <option value="unemployed">Unemployed</option>
-          <option value="selfEmployed">Self-Employed</option>
-          <option value="actor">Actor</option>
-          <option value="astronaut">Astronaut</option>
-          <option value="athlete">Athlete</option>
-          <option value="babysitter">Babysitter</option>
-          <option value="barista">Barista</option>
-          <option value="business">Business</option>
-          <option value="civilDesigner">Civil Designer</option>
-          <option value="criminal">Criminal</option>
-          <option value="critic">Critic</option>
-          <option value="conservationist">Conservationist</option>
-          <option value="culinary">Culinary</option>
-          <option value="detective">Detective</option>
-          <option value="diver">Diver</option>
-          <option value="doctor">Doctor</option>
-          <option value="education">Education</option>
-          <option value="engineer">Engineer</option>
-          <option value="entertainer">Entertainer</option>
-          <option value="fastFoodEmployee">Fast Food Employee</option>
-          <option value="fisherman">Fisherman</option>
-          <option value="freelancer">Freelancer</option>
-          <option value="gardener">Gardener</option>
-          <option value="handyperson">Handyperson</option>
-          <option value="interiorDecorator">Interior Decorator</option>
-          <option value="law">Law</option>
-          <option value="lifeguard">Lifeguard</option>
-          <option value="manualLaborer">Manual Laborer</option>
-          <option value="military">Military</option>
-          <option value="painter">Painter</option>
-          <option value="politician">Politician</option>
-          <option value="reaper">Reaper</option>
-          <option value="retailEmployee">Retail Employee</option>
-          <option value="romanceConsultant">Romance Consultant</option>
-          <option value="salaryperson">Salaryperson</option>
-          <option value="scientist">Scientist</option>
-          <option value="secretAgent">Secret Agent</option>
-          <option value="simfluencer">Simfluencer</option>
-          <option value="socialMedia">Social Media</option>
-          <option value="styleInfluencer">Style Influencer</option>
-          <option value="tattooArtist">Tattoo Artist</option>
-          <option value="techGuru">Tech Guru</option>
-          <option value="undertaker">Undertaker</option>
-          <option value="videoGameStreamer">Video Game Streamer</option>
-          <option value="writer">Writer</option>
+          <option value="Unemployed">Unemployed</option>
+          <option value="Self-Employed">Self-Employed</option>
+          <option value="Actor">Actor</option>
+          <option value="Astronaut">Astronaut</option>
+          <option value="Athlete">Athlete</option>
+          <option value="Babysitter">Babysitter</option>
+          <option value="Barista">Barista</option>
+          <option value="Business">Business</option>
+          <option value="Civil Designer">Civil Designer</option>
+          <option value="Criminal">Criminal</option>
+          <option value="Critic">Critic</option>
+          <option value="Conservationist">Conservationist</option>
+          <option value="Culinary">Culinary</option>
+          <option value="Detective">Detective</option>
+          <option value="Diver">Diver</option>
+          <option value="Doctor">Doctor</option>
+          <option value="Education">Education</option>
+          <option value="Engineer">Engineer</option>
+          <option value="Entertainer">Entertainer</option>
+          <option value="Fast Food Employee">Fast Food Employee</option>
+          <option value="Fisherman">Fisherman</option>
+          <option value="Freelancer">Freelancer</option>
+          <option value="Gardener">Gardener</option>
+          <option value="Handyperson">Handyperson</option>
+          <option value="Interior Decorator">Interior Decorator</option>
+          <option value="Law">Law</option>
+          <option value="Lifeguard">Lifeguard</option>
+          <option value="Manual Laborer">Manual Laborer</option>
+          <option value="Military">Military</option>
+          <option value="Painter">Painter</option>
+          <option value="Politician">Politician</option>
+          <option value="Reaper">Reaper</option>
+          <option value="Retail Employee">Retail Employee</option>
+          <option value="Romance Consultant">Romance Consultant</option>
+          <option value="Salaryperson">Salaryperson</option>
+          <option value="Scientist">Scientist</option>
+          <option value="Secret Agent">Secret Agent</option>
+          <option value="Simfluencer">Simfluencer</option>
+          <option value="Social Media">Social Media</option>
+          <option value="Style Influencer">Style Influencer</option>
+          <option value="Tattoo Artist">Tattoo Artist</option>
+          <option value="Tech Guru">Tech Guru</option>
+          <option value="Undertaker">Undertaker</option>
+          <option value="Video Game Streamer">Video Game Streamer</option>
+          <option value="Writer">Writer</option>
         </select>
       </div>
       <div>
@@ -132,92 +133,93 @@
       <div>
         <label for="aspiration">Aspiration:</label>
         <select id="aspiration" name="aspiration" >
-        <option value="academic">Academic</option>
-        <option value="anglingAce">Angling Ace</option>
-        <option value="applianceWiz">Appliance Wiz</option>
-        <option value="archaeologyScholar">Archaeology Scholar</option>
-        <option value="beachLife">Beach Life</option>
-        <option value="bestsellingAuthor">Bestselling Author</option>
-        <option value="bigHappyFamily">Big Happy Family</option>
-        <option value="bodybuilder">Bodybuilder</option>
-        <option value="championshipRider">Championship Rider</option>
-        <option value="chiefOfMischief">Chief of Mischief</option>
-        <option value="cityNative">City Native</option>
-        <option value="computerWhiz">Computer Whiz</option>
-        <option value="countryCaretaker">Country Caretaker</option>
-        <option value="crystalCrafter">Crystal Crafter</option>
-        <option value="cureSeeker">Cure Seeker</option>
-        <option value="discerningDweller">Discerning Dweller</option>
-        <option value="emissaryOfTheCollective">Emissary of the Collective</option>
-        <option value="ecoInnovator">Eco Innovator</option>
-        <option value="enforcerOfOrder">Enforcer of Order</option>
-        <option value="expertNectarMaker">Expert Nectar Maker</option>
-        <option value="fabulouslyFilthy">Fabulously Filthy</option>
-        <option value="fabulouslyWealthy">Fabulously Wealthy</option>
-        <option value="fiveStarPropertyOwner">Five-Star Property Owner</option>
-        <option value="friendOfTheAnimals">Friend of the Animals</option>
-        <option value="friendOfTheWorld">Friend of the World</option>
-        <option value="fountOfTomaraniKnowledge">Fount of Tomarani Knowledge</option>
-        <option value="galacticPrivateer">Galactic Privateer</option>
-        <option value="ghostHistorian">Ghost Historian</option>
-        <option value="goodVampire">Good Vampire</option>
-        <option value="hopeVsOrder">Hope VS Order</option>
-        <option value="innerPeace">Inner Peace</option>
-        <option value="jokeStar">Joke Star</option>
-        <option value="jungleExplorer">Jungle Explorer</option>
-        <option value="leaderOfThePack">Leader of the Pack</option>
-        <option value="loneWolf">Lone Wolf</option>
-        <option value="lordLadyOfTheKnits">Lord/Lady of the Knits</option>
-        <option value="mansionBaron">Mansion Baron</option>
-        <option value="marketMagnate">Market Magnate</option>
-        <option value="masterActorMasterActress">Master Actor/Master Actress</option>
-        <option value="masterChef">Master Chef</option>
-        <option value="masterMentor">Master Mentor</option>
-        <option value="masterMaker">Master Maker</option>
-        <option value="masterMixologist">Master Mixologist</option>
-        <option value="masterVampire">Master Vampire</option>
-        <option value="musicalGenius">Musical Genius</option>
-        <option value="mtKomorebiSightseer">Mt. Komorebi Sightseer</option>
-        <option value="neighborhoodConfidante">Neighborhood Confidante</option>
-        <option value="nerdBrain">Nerd Brain</option>
-        <option value="paragonOfHope">Paragon of Hope</option>
-        <option value="paragonPartner">Paragon Partner</option>
-        <option value="painterExtraordinaire">Painter Extraordinaire</option>
-        <option value="partyAnimal">Party Animal</option>
-        <option value="perfectlyPristine">Perfectly Pristine</option>
-        <option value="publicEnemy">Public Enemy</option>
-        <option value="purveyorOfPotions">Purveyor of Potions</option>
-        <option value="renaissanceSim">Renaissance Sim</option>
-        <option value="romanticExplorer">Romantic Explorer</option>
-        <option value="seekerOfSecrets">Seeker of Secrets</option>
-        <option value="serialRomantic">Serial Romantic</option>
-        <option value="selfCareSpecialist">Self-Care Specialist</option>
-        <option value="stickyFingers">Sticky Fingers</option>
-        <option value="strangerVilleMystery">StrangerVille Mystery</option>
-        <option value="soulmate">Soulmate</option>
-        <option value="superParent">Super Parent</option>
-        <option value="successfulLineage">Successful Lineage</option>
-        <option value="spellcraftAndSorcery">Spellcraft & Sorcery</option>
-        <option value="theCurator">The Curator</option>
-        <option value="thePositivityChallenge">The Positivity Challenge</option>
-        <option value="vampireFamily">Vampire Family</option>
-        <option value="villainousValentine">Villainous Valentine</option>
-        <option value="wildfangRenegade">Wildfang Renegade</option>
-        <option value="werewolfInitiate">Werewolf Initiate</option>
-        <option value="worldFamousCelebrity">World-Famous Celebrity</option>
-        <option value="zenGuru">Zen Guru</option>
-        <option value="artisticProdigy">Artistic Prodigy (Child)</option>
-        <option value="creativeGenius">Creative Genius (Child)</option>
-        <option value="mindAndBody">Mind and Body (Child)</option>
-        <option value="playtimeCaptain">Playtime Captain (Child)</option>
-        <option value="rambunctiousScamp">Rambunctious Scamp (Child)</option>
-        <option value="slumberPartyAnimal">Slumber Party Animal (Child)</option>
-        <option value="socialButterfly">Social Butterfly (Child)</option>
-        <option value="whizKid">Whiz Kid (Child)</option>
-        <option value="admiredIcon">Admired Icon (Teen)</option>
-        <option value="dramaLlama">Drama Llama (Teen)</option>
-        <option value="goalOriented">Goal Oriented (Teen)</option>
-        <option value="liveFast">Live Fast (Teen)</option>
+        <option value="Academic">Academic</option>
+        <option value="Angling Ace">Angling Ace</option>
+        <option value="Appliance Wiz">Appliance Wiz</option>
+        <option value="Archaeology Scholar">Archaeology Scholar</option>
+        <option value="Beach Life">Beach Life</option>
+        <option value="Bestselling Author">Bestselling Author</option>
+        <option value="Big Happy Family">Big Happy Family</option>
+        <option value="Bodybuilder">Bodybuilder</option>
+        <option value="Championship Rider">Championship Rider</option>
+        <option value="Chief of Mischief">Chief of Mischief</option>
+        <option value="City Native">City Native</option>
+        <option value="Computer Whiz">Computer Whiz</option>
+        <option value="Country Caretaker">Country Caretaker</option>
+        <option value="Crystal Crafter">Crystal Crafter</option>
+        <option value="Cure Seeker">Cure Seeker</option>
+        <option value="Discerning Dweller">Discerning Dweller</option>
+        <option value="Emissary of the Collective">Emissary of the Collective</option>
+        <option value="Eco Innovator">Eco Innovator</option>
+        <option value="Enforcer of Order">Enforcer of Order</option>
+        <option value="Expert Nectar Maker">Expert Nectar Maker</option>
+        <option value="Fabulously Filthy">Fabulously Filthy</option>
+        <option value="Fabulously Wealthy">Fabulously Wealthy</option>
+        <option value="Five-Star Property Owner">Five-Star Property Owner</option>
+        <option value="Friend of the Animals">Friend of the Animals</option>
+        <option value="Friend of the World">Friend of the World</option>
+        <option value="Fount of Tomarani Knowledge">Fount of Tomarani Knowledge</option>
+        <option value="Galactic Privateer">Galactic Privateer</option>
+        <option value="Ghost Historian">Ghost Historian</option>
+        <option value="Good Vampire">Good Vampire</option>
+        <option value="Hope VS Order">Hope VS Order</option>
+        <option value="Inner Peace">Inner Peace</option>
+        <option value="Joke Star">Joke Star</option>
+        <option value="Jungle Explorer">Jungle Explorer</option>
+        <option value="Leader of the Pack">Leader of the Pack</option>
+        <option value="Lone Wolf">Lone Wolf</option>
+        <option value="Lord/Lady of the Knits">Lord/Lady of the Knits</option>
+        <option value="Mansion Baron">Mansion Baron</option>
+        <option value="Market Magnate">Market Magnate</option>
+        <option value="Master Actor/Master Actress">Master Actor/Master Actress</option>
+        <option value="Master Chef">Master Chef</option>
+        <option value="Master Mentor">Master Mentor</option>
+        <option value="Master Maker">Master Maker</option>
+        <option value="Master Mixologist">Master Mixologist</option>
+        <option value="Master Vampire">Master Vampire</option>
+        <option value="Musical Genius">Musical Genius</option>
+        <option value="Mt. Komorebi Sightseer">Mt. Komorebi Sightseer</option>
+        <option value="Neighborhood Confidante">Neighborhood Confidante</option>
+        <option value="Nerd Brain">Nerd Brain</option>
+        <option value="Outdoor Enthusiast">Outdoor Enthusiast</option>
+        <option value="Paragon of Hope">Paragon of Hope</option>
+        <option value="Paragon Partner">Paragon Partner</option>
+        <option value="Painter Extraordinaire">Painter Extraordinaire</option>
+        <option value="Party Animal">Party Animal</option>
+        <option value="Perfectly Pristine">Perfectly Pristine</option>
+        <option value="Public Enemy">Public Enemy</option>
+        <option value="Purveyor of Potions">Purveyor of Potions</option>
+        <option value="Renaissance Sim">Renaissance Sim</option>
+        <option value="Romantic Explorer">Romantic Explorer</option>
+        <option value="Seeker of Secrets">Seeker of Secrets</option>
+        <option value="Serial Romantic">Serial Romantic</option>
+        <option value="Self-Care Specialist">Self-Care Specialist</option>
+        <option value="Sticky Fingers">Sticky Fingers</option>
+        <option value="StrangerVille Mystery">StrangerVille Mystery</option>
+        <option value="Soulmate">Soulmate</option>
+        <option value="Super Parent">Super Parent</option>
+        <option value="Successful Lineage">Successful Lineage</option>
+        <option value="Spellcraft & Sorcery">Spellcraft & Sorcery</option>
+        <option value="The Curator">The Curator</option>
+        <option value="The Positivity Challenge">The Positivity Challenge</option>
+        <option value="Vampire Family">Vampire Family</option>
+        <option value="Villainous Valentine">Villainous Valentine</option>
+        <option value="Wildfang Renegade">Wildfang Renegade</option>
+        <option value="Werewolf Initiate">Werewolf Initiate</option>
+        <option value="World-Famous Celebrity">World-Famous Celebrity</option>
+        <option value="Zen Guru">Zen Guru</option>
+        <option value="Artistic Prodigy">Artistic Prodigy (Child)</option>
+        <option value="Creative Genius">Creative Genius (Child)</option>
+        <option value="Mind and Body">Mind and Body (Child)</option>
+        <option value="Playtime Captain">Playtime Captain (Child)</option>
+        <option value="Rambunctious Scamp">Rambunctious Scamp (Child)</option>
+        <option value="Slumber Party Animal">Slumber Party Animal (Child)</option>
+        <option value="Social Butterfly">Social Butterfly (Child)</option>
+        <option value="Whiz Kid">Whiz Kid (Child)</option>
+        <option value="Admired Icon">Admired Icon (Teen)</option>
+        <option value="Drama Llama">Drama Llama (Teen)</option>
+        <option value="Goal Oriented">Goal Oriented (Teen)</option>
+        <option value="Live Fast">Live Fast (Teen)</option>
         </select>
       </div>
       <div>
@@ -232,7 +234,7 @@
         <label for="comments">Comments:</label>
         <textarea name="comments" id="comments"></textarea>
       </div>
-      <button type="submit">Add Sim</button>
+      <button type="submit">Add Your Sim</button>
     </form>
   </body>
 </html>

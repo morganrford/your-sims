@@ -4,10 +4,237 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/stylesheets/stylesheet.css" />
-    <title>Edit Sim</title>
+    <title>Edit Your Sim</title>
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
-
+ <h1>Edit <%= sim.name %> </h1>
+ <form action="/users/<%= user._id %>/sims/<%= sim._id %>?_method=PUT" method="POST">
+    <div>
+      <label for="name">Name: (required)</label>
+      <input type="text" name="name" id="name" value="<%= sim.name %>" required />
+    </div>
+    <div>
+      <label for="photo">Photo: (photo link)</label>
+      <input type="text" name="photo" id="photo" value="<%= sim.photo %>" />
+    </div>
+    <div>
+      <label for="lifeStage">Life Stage: (required)</label>
+      <select id="lifeStage" name="lifeStage" required>
+        <option value="Newborn" <%= sim.lifeStage === 'Newborn' ? 'selected' : '' %>>Newborn</option>
+        <option value="Infant" <%= sim.lifeStage === 'Infant' ? 'selected' : '' %>>Infant</option>
+        <option value="Toddler" <%= sim.lifeStage === 'Toddler' ? 'selected' : '' %>>Toddler</option>
+        <option value="Child" <%= sim.lifeStage === 'Child' ? 'selected' : '' %>>Child</option>
+        <option value="Teen" <%= sim.lifeStage === 'Teen' ? 'selected' : '' %>>Teen</option>
+        <option value="Young Adult" <%= sim.lifeStage === 'Young Adult' ? 'selected' : '' %>>Young Adult</option>
+        <option value="Adult" <%= sim.lifeStage === 'Adult' ? 'selected' : '' %>>Adult</option>
+        <option value="Elder" <%= sim.lifeStage === 'Elder' ? 'selected' : '' %>>Elder</option>
+      </select>
+    </div>
+    <div>
+       <label for="occult">Occult: (required)</label>
+       <select id="occult" name="occult" required>
+        <option value="Human" <%= sim.lifeStage === 'Human' ? 'selected' : '' %>>Human</option>
+        <option value="Alien" <%= sim.lifeStage === 'Alien' ? 'selected' : '' %>>Alien</option>
+        <option value="Ghost" <%= sim.lifeStage === 'Ghost' ? 'selected' : '' %>>Ghost</option>
+        <option value="Mermaid" <%= sim.lifeStage === 'Mermaid' ? 'selected' : '' %>>Mermaid</option>
+        <option value="Servo" <%= sim.lifeStage === 'Servo' ? 'selected' : '' %>>Servo</option>
+        <option value="Spellcaster" <%= sim.lifeStage === 'Spellcaster' ? 'selected' : '' %>>Spellcaster</option>
+        <option value="Vampire" <%= sim.lifeStage === 'Vampire' ? 'selected' : '' %>>Vampire</option>
+        <option value="Werewolf" <%= sim.lifeStage === 'Werewolf' ? 'selected' : '' %>>Werewolf</option>
+       </select>
+    </div>
+      <label for="sexuality">Sexuality: (required)</label>
+      <input type="text" name="sexuality" id="sexuality" value="<%= sim.sexuality %>" required />
+    <div>
+      <label for="world">World:</label>
+      <select id="world" name="world">
+        <option value="Brindleton Bay" <%= sim.world === 'Brindleton Bay' ? 'selected' : '' %>>Brindleton Bay</option>
+        <option value="Britechester" <%= sim.world === 'Britechester' ? 'selected' : '' %>>Britechester</option>
+        <option value="Chestnut Ridge" <%= sim.world === 'Chestnut Ridge' ? 'selected' : '' %>>Chestnut Ridge</option>
+        <option value="Ciudad Enamorada" <%= sim.world === 'Ciudad Enamorada' ? 'selected' : '' %>>Ciudad Enamorada</option>
+        <option value="Copperdale" <%= sim.world === 'Copperdale' ? 'selected' : '' %>>Copperdale</option>
+        <option value="Del Sol Valley" <%= sim.world === 'Del Sol Valley' ? 'selected' : '' %>>Del Sol Valley</option>
+        <option value="Evergreen Harbor" <%= sim.world === 'Evergreen Harbor' ? 'selected' : '' %>>Evergreen Harbor</option>
+        <option value="Forgotten Hollow" <%= sim.world === 'Forgotten Hollow' ? 'selected' : '' %>>Forgotten Hollow</option>
+        <option value="Glimmerbrook" <%= sim.world === 'Glimmerbrook' ? 'selected' : '' %>>Glimmerbrook</option>
+        <option value="Henford-on-Bagley" <%= sim.world === 'Henford-on-Bagley' ? 'selected' : '' %>>Henford-on-Bagley</option>
+        <option value="Magnolia Promenade" <%= sim.world === 'Magnolia Promenade' ? 'selected' : '' %>>Magnolia Promenade</option>
+        <option value="Moonwood Mill" <%= sim.world === 'Moonwood Mill' ? 'selected' : '' %>>Moonwood Mill</option>
+        <option value="Mt. Komorebi" <%= sim.world === 'Mt. Komorebi' ? 'selected' : '' %>>Mt. Komorebi</option>
+        <option value="Newcrest" <%= sim.world === 'Newcrest' ? 'selected' : '' %>>Newcrest</option>
+        <option value="Nordhaven" <%= sim.world === 'Nordhaven' ? 'selected' : '' %>>Nordhaven</option>
+        <option value="Oasis Springs" <%= sim.world === 'Oasis Springs' ? 'selected' : '' %>>Oasis Springs</option>
+        <option value="Ravenwood" <%= sim.world === 'Ravenwood' ? 'selected' : '' %>>Ravenwood</option>
+        <option value="San Myshuno" <%= sim.world === 'San Myshuno' ? 'selected' : '' %>>San Myshuno</option>
+        <option value="San Sequoia" <%= sim.world === 'San Sequoia' ? 'selected' : '' %>>San Sequoia</option>
+        <option value="StrangerVille" <%= sim.world === 'StrangerVille' ? 'selected' : '' %>>StrangerVille</option>
+        <option value="Sulani" <%= sim.world === 'Sulani' ? 'selected' : '' %>>Sulani</option>
+        <option value="Tartosa" <%= sim.world === 'Tartosa' ? 'selected' : '' %>>Tartosa</option>
+        <option value="Tomarang" <%= sim.world === 'Tomarang' ? 'selected' : '' %>>Tomarang</option>
+        <option value="Willow Creek" <%= sim.world === 'Willow Creek' ? 'selected' : '' %>>Willow Creek</option>
+        <option value="Windenburg" <%= sim.world === 'Windenburg' ? 'selected' : '' %>>Windenburg</option>
+      </select>
+    </div>
+    <div>
+      <label for="career">Career: (required)</label>
+      <select id="career" name="career" required>
+        <option value="Unemployed" <%= sim.career === 'Unemployed' ? 'selected' : '' %>>Unemployed</option>
+        <option value="Self-Employed" <%= sim.career === 'Self-Employed' ? 'selected' : '' %>>Self-Employed</option>
+        <option value="Actor" <%= sim.career === 'Actor' ? 'selected' : '' %>>Actor</option>
+        <option value="Astronaut" <%= sim.career === 'Astronaut' ? 'selected' : '' %>>Astronaut</option>
+        <option value="Athlete" <%= sim.career === 'Athlete' ? 'selected' : '' %>>Athlete</option>
+        <option value="Babysitter" <%= sim.career === 'Babysitter' ? 'selected' : '' %>>Babysitter</option>
+        <option value="Barista" <%= sim.career === 'Barista' ? 'selected' : '' %>>Barista</option>
+        <option value="Business" <%= sim.career === 'Business' ? 'selected' : '' %>>Business</option>
+        <option value="Civil Designer" <%= sim.career === 'Civil Designer' ? 'selected' : '' %>>Civil Designer</option>
+        <option value="Criminal" <%= sim.career === 'Criminal' ? 'selected' : '' %>>Criminal</option>
+        <option value="Critic" <%= sim.career === 'Critic' ? 'selected' : '' %>>Critic</option>
+        <option value="Conservationist" <%= sim.career === 'Conservationist' ? 'selected' : '' %>>Conservationist</option>
+        <option value="Culinary" <%= sim.career === 'Culinary' ? 'selected' : '' %>>Culinary</option>
+        <option value="Detective" <%= sim.career === 'Detective' ? 'selected' : '' %>>Detective</option>
+        <option value="Diver" <%= sim.career === 'Diver' ? 'selected' : '' %>>Diver</option>
+        <option value="Doctor" <%= sim.career === 'Doctor' ? 'selected' : '' %>>Doctor</option>
+        <option value="Education" <%= sim.career === 'Education' ? 'selected' : '' %>>Education</option>
+        <option value="Engineer" <%= sim.career === 'Engineer' ? 'selected' : '' %>>Engineer</option>
+        <option value="Entertainer" <%= sim.career === 'Entertainer' ? 'selected' : '' %>>Entertainer</option>
+        <option value="Fast Food Employee" <%= sim.career === 'Fast Food Employee' ? 'selected' : '' %>>Fast Food Employee</option>
+        <option value="Fisherman" <%= sim.career === 'Fisherman' ? 'selected' : '' %>>Fisherman</option>
+        <option value="Freelancer" <%= sim.career === 'Freelancer' ? 'selected' : '' %>>Freelancer</option>
+        <option value="Gardener" <%= sim.career === 'Gardener' ? 'selected' : '' %>>Gardener</option>
+        <option value="Handyperson" <%= sim.career === 'Handyperson' ? 'selected' : '' %>>Handyperson</option>
+        <option value="Interior Decorator" <%= sim.career === 'Interior Decorator' ? 'selected' : '' %>>Interior Decorator</option>
+        <option value="Law" <%= sim.career === 'Law' ? 'selected' : '' %>>Law</option>
+        <option value="Lifeguard" <%= sim.career === 'Lifeguard' ? 'selected' : '' %>>Lifeguard</option>
+        <option value="Manual Laborer" <%= sim.career === 'Manual Laborer' ? 'selected' : '' %>>Manual Laborer</option>
+        <option value="Military" <%= sim.career === 'Military' ? 'selected' : '' %>>Military</option>
+        <option value="Painter" <%= sim.career === 'Painter' ? 'selected' : '' %>>Painter</option>
+        <option value="Politician" <%= sim.career === 'Politician' ? 'selected' : '' %>>Politician</option>
+        <option value="Reaper" <%= sim.career === 'Reaper' ? 'selected' : '' %>>Reaper</option>
+        <option value="Retail Employee" <%= sim.career === 'Retail Employee' ? 'selected' : '' %>>Retail Employee</option>
+        <option value="Romance Consultant" <%= sim.career === 'Romance Consultant' ? 'selected' : '' %>>Romance Consultant</option>
+        <option value="Salaryperson" <%= sim.career === 'Salaryperson' ? 'selected' : '' %>>Salaryperson</option>
+        <option value="Scientist" <%= sim.career === 'Scientist' ? 'selected' : '' %>>Scientist</option>
+        <option value="Secret Agent" <%= sim.career === 'Secret Agent' ? 'selected' : '' %>>Secret Agent</option>
+        <option value="Simfluencer" <%= sim.career === 'Simfluencer' ? 'selected' : '' %>>Simfluencer</option>
+        <option value="Social Media" <%= sim.career === 'Social Media' ? 'selected' : '' %>>Social Media</option>
+        <option value="Style Influencer" <%= sim.career === 'Style Influencer' ? 'selected' : '' %>>Style Influencer</option>
+        <option value="Tattoo Artist" <%= sim.career === 'Tattoo Artist' ? 'selected' : '' %>>Tattoo Artist</option>
+        <option value="Tech Guru" <%= sim.career === 'Tech Guru' ? 'selected' : '' %>>Tech Guru</option>
+        <option value="Undertaker" <%= sim.career === 'Undertaker' ? 'selected' : '' %>>Undertaker</option>
+        <option value="Video Game Streamer" <%= sim.career === 'Video Game Streamer' ? 'selected' : '' %>>Video Game Streamer</option>
+        <option value="Writer" <%= sim.career === 'Writer' ? 'selected' : '' %>>Writer</option>
+      </select>
+    </div>
+    <div>
+      <label for="personalityTraits">Personality Traits:</label>
+      <input type="text" name="personalityTraits" id="personalityTraits" value="<%= sim.personalityTraits %>" />
+    </div>
+    <div>
+      <label for="aspiration">Aspiration:</label>
+      <select id="aspiration" name="aspiration" >
+        <option value="Academic" <%= sim.aspiration === 'Academic' ? 'selected' : '' %>>Academic</option>
+        <option value="Angling Ace" <%= sim.aspiration === 'Angling Ace' ? 'selected' : '' %>>Angling Ace</option>
+        <option value="Appliance Wiz" <%= sim.aspiration === 'Appliance Wiz' ? 'selected' : '' %>>Appliance Wiz</option>
+        <option value="Archaeology Scholar" <%= sim.aspiration === 'Archaeology Scholar' ? 'selected' : '' %>>Archaeology Scholar</option>
+        <option value="Beach Life" <%= sim.aspiration === 'Beach Life' ? 'selected' : '' %>>Beach Life</option>
+        <option value="Bestselling Author" <%= sim.aspiration === 'Bestselling Author' ? 'selected' : '' %>>Bestselling Author</option>
+        <option value="Big Happy Family" <%= sim.aspiration === 'Big Happy Family' ? 'selected' : '' %>>Big Happy Family</option>
+        <option value="Bodybuilder" <%= sim.aspiration === 'Bodybuilder' ? 'selected' : '' %>>Bodybuilder</option>
+        <option value="Championship Rider" <%= sim.aspiration === 'Championship Rider' ? 'selected' : '' %>>Championship Rider</option>
+        <option value="Chief of Mischief" <%= sim.aspiration === 'Chief of Mischief' ? 'selected' : '' %>>Chief of Mischief</option>
+        <option value="City Native" <%= sim.aspiration === 'City Native' ? 'selected' : '' %>>City Native</option>
+        <option value="Computer Whiz" <%= sim.aspiration === 'Computer Whiz' ? 'selected' : '' %>>Computer Whiz</option>
+        <option value="Country Caretaker" <%= sim.aspiration === 'Country Caretaker' ? 'selected' : '' %>>Country Caretaker</option>
+        <option value="Crystal Crafter" <%= sim.aspiration === 'Crystal Crafter' ? 'selected' : '' %>>Crystal Crafter</option>
+        <option value="Cure Seeker" <%= sim.aspiration === 'Cure Seeker' ? 'selected' : '' %>>Cure Seeker</option>
+        <option value="Discerning Dweller" <%= sim.aspiration === 'Discerning Dweller' ? 'selected' : '' %>>Discerning Dweller</option>
+        <option value="Emissary of the Collective" <%= sim.aspiration === 'Emissary of the Collective' ? 'selected' : '' %>>Emissary of the Collective</option>
+        <option value="Eco Innovator" <%= sim.aspiration === 'Eco Innovator' ? 'selected' : '' %>>Eco Innovator</option>
+        <option value="Enforcer of Order" <%= sim.aspiration === 'Enforcer of Order' ? 'selected' : '' %>>Enforcer of Order</option>
+        <option value="Expert Nectar Maker" <%= sim.aspiration === 'Expert Nectar Maker' ? 'selected' : '' %>>Expert Nectar Maker</option>
+        <option value="Fabulously Filthy" <%= sim.aspiration === 'Fabulously Filthy' ? 'selected' : '' %>>Fabulously Filthy</option>
+        <option value="Fabulously Wealthy" <%= sim.aspiration === 'Fabulously Wealthy' ? 'selected' : '' %>>Fabulously Wealthy</option>
+        <option value="Five-Star Property Owner" <%= sim.aspiration === 'Five-Star Property Owner' ? 'selected' : '' %>>Five-Star Property Owner</option>
+        <option value="Friend of the Animals" <%= sim.aspiration === 'Friend of the Animals' ? 'selected' : '' %>>Friend of the Animals</option>
+        <option value="Friend of the World" <%= sim.aspiration === 'Friend of the World' ? 'selected' : '' %>>Friend of the World</option>
+        <option value="Fount of Tomarani Knowledge" <%= sim.aspiration === 'Fount of Tomarani Knowledge' ? 'selected' : '' %>>Fount of Tomarani Knowledge</option>
+        <option value="Galactic Privateer" <%= sim.aspiration === 'Galactic Privateer' ? 'selected' : '' %>>Galactic Privateer</option>
+        <option value="Ghost Historian" <%= sim.aspiration === 'Ghost Historian' ? 'selected' : '' %>>Ghost Historian</option>
+        <option value="Good Vampire" <%= sim.aspiration === 'Good Vampire' ? 'selected' : '' %>>Good Vampire</option>
+        <option value="Hope VS Order" <%= sim.aspiration === 'Hope VS Order' ? 'selected' : '' %>>Hope VS Order</option>
+        <option value="Inner Peace" <%= sim.aspiration === 'Inner Peace' ? 'selected' : '' %>>Inner Peace</option>
+        <option value="Joke Star" <%= sim.aspiration === 'Joke Star' ? 'selected' : '' %>>Joke Star</option>
+        <option value="Jungle Explorer" <%= sim.aspiration === 'Jungle Explorer' ? 'selected' : '' %>>Jungle Explorer</option>
+        <option value="Leader of the Pack" <%= sim.aspiration === 'Leader of the Pack' ? 'selected' : '' %>>Leader of the Pack</option>
+        <option value="Lone Wolf" <%= sim.aspiration === 'Lone Wolf' ? 'selected' : '' %>>Lone Wolf</option>
+        <option value="Lord/Lady of the Knits" <%= sim.aspiration === 'Lord/Lady of the Knits' ? 'selected' : '' %>>Lord/Lady of the Knits</option>
+        <option value="Mansion Baron" <%= sim.aspiration === 'Mansion Baron' ? 'selected' : '' %>>Mansion Baron</option>
+        <option value="Market Magnate" <%= sim.aspiration === 'Market Magnate' ? 'selected' : '' %>>Market Magnate</option>
+        <option value="Master Actor/Master Actress" <%= sim.aspiration === 'Master Actor/Master Actress' ? 'selected' : '' %>>Master Actor/Master Actress</option>
+        <option value="Master Chef" <%= sim.aspiration === 'Master Chef' ? 'selected' : '' %>>Master Chef</option>
+        <option value="Master Mentor" <%= sim.aspiration === 'Master Mentor' ? 'selected' : '' %>>Master Mentor</option>
+        <option value="Master Maker" <%= sim.aspiration === 'Master Maker' ? 'selected' : '' %>>Master Maker</option>
+        <option value="Master Mixologist" <%= sim.aspiration === 'Master Mixologist' ? 'selected' : '' %>>Master Mixologist</option>
+        <option value="Master Vampire" <%= sim.aspiration === 'Master Vampire' ? 'selected' : '' %>>Master Vampire</option>
+        <option value="Musical Genius" <%= sim.aspiration === 'Musical Genius' ? 'selected' : '' %>>Musical Genius</option>
+        <option value="Mt. Komorebi Sightseer" <%= sim.aspiration === 'Mt. Komorebi Sightseer' ? 'selected' : '' %>>Mt. Komorebi Sightseer</option>
+        <option value="Neighborhood Confidante" <%= sim.aspiration === 'Neighborhood Confidante' ? 'selected' : '' %>>Neighborhood Confidante</option>
+        <option value="Nerd Brain" <%= sim.aspiration === 'Nerd Brain' ? 'selected' : '' %>>Nerd Brain</option>
+        <option value="Outdoor Enthusiast" <%= sim.aspiration === 'Outdoor Enthusiast' ? 'selected' : '' %>>Outdoor Enthusiast</option>
+        <option value="Paragon of Hope" <%= sim.aspiration === 'Paragon of Hope' ? 'selected' : '' %>>Paragon of Hope</option>
+        <option value="Paragon Partner" <%= sim.aspiration === 'Paragon Partner' ? 'selected' : '' %>>Paragon Partner</option>
+        <option value="Painter Extraordinaire" <%= sim.aspiration === 'Painter Extraordinaire' ? 'selected' : '' %>>Painter Extraordinaire</option>
+        <option value="Party Animal" <%= sim.aspiration === 'Party Animal' ? 'selected' : '' %>>Party Animal</option>
+        <option value="Perfectly Pristine" <%= sim.aspiration === 'Perfectly Pristine' ? 'selected' : '' %>>Perfectly Pristine</option>
+        <option value="Public Enemy" <%= sim.aspiration === 'Public Enemy' ? 'selected' : '' %>>Public Enemy</option>
+        <option value="Purveyor of Potions" <%= sim.aspiration === 'Purveyor of Potions' ? 'selected' : '' %>>Purveyor of Potions</option>
+        <option value="Renaissance Sim" <%= sim.aspiration === 'Renaissance Sim' ? 'selected' : '' %>>Renaissance Sim</option>
+        <option value="Romantic Explorer" <%= sim.aspiration === 'Romantic Explorer' ? 'selected' : '' %>>Romantic Explorer</option>
+        <option value="Seeker of Secrets" <%= sim.aspiration === 'Seeker of Secrets' ? 'selected' : '' %>>Seeker of Secrets</option>
+        <option value="Serial Romantic" <%= sim.aspiration === 'Serial Romantic' ? 'selected' : '' %>>Serial Romantic</option>
+        <option value="Self-Care Specialist" <%= sim.aspiration === 'Self-Care Specialist' ? 'selected' : '' %>>Self-Care Specialist</option>
+        <option value="Sticky Fingers" <%= sim.aspiration === 'Sticky Fingers' ? 'selected' : '' %>>Sticky Fingers</option>
+        <option value="StrangerVille Mystery" <%= sim.aspiration === 'StrangerVille Mystery' ? 'selected' : '' %>>StrangerVille Mystery</option>
+        <option value="Soulmate" <%= sim.aspiration === 'Soulmate' ? 'selected' : '' %>>Soulmate</option>
+        <option value="Super Parent" <%= sim.aspiration === 'Super Parent' ? 'selected' : '' %>>Super Parent</option>
+        <option value="Successful Lineage" <%= sim.aspiration === 'Successful Lineage' ? 'selected' : '' %>>Successful Lineage</option>
+        <option value="Spellcraft & Sorcery" <%= sim.aspiration === 'Spellcraft & Sorcery' ? 'selected' : '' %>>Spellcraft & Sorcery</option>
+        <option value="The Curator" <%= sim.aspiration === 'The Curator' ? 'selected' : '' %>>The Curator</option>
+        <option value="The Positivity Challenge" <%= sim.aspiration === 'The Positivity Challenge' ? 'selected' : '' %>>The Positivity Challenge</option>
+        <option value="Vampire Family" <%= sim.aspiration === 'Vampire Family' ? 'selected' : '' %>>Vampire Family</option>
+        <option value="Villainous Valentine" <%= sim.aspiration === 'Villainous Valentine' ? 'selected' : '' %>>Villainous Valentine</option>
+        <option value="Wildfang Renegade" <%= sim.aspiration === 'Wildfang Renegade' ? 'selected' : '' %>>Wildfang Renegade</option>
+        <option value="Werewolf Initiate" <%= sim.aspiration === 'Werewolf Initiate' ? 'selected' : '' %>>Werewolf Initiate</option>
+        <option value="World-Famous Celebrity" <%= sim.aspiration === 'World-Famous Celebrity' ? 'selected' : '' %>>World-Famous Celebrity</option>
+        <option value="Zen Guru" <%= sim.aspiration === 'Zen Guru' ? 'selected' : '' %>>Zen Guru</option>
+        <option value="Artistic Prodigy" <%= sim.aspiration === 'Artistic Prodigy' ? 'selected' : '' %>>Artistic Prodigy (Child)</option>
+        <option value="Creative Genius" <%= sim.aspiration === 'Creative Genius' ? 'selected' : '' %>>Creative Genius (Child)</option>
+        <option value="Mind and Body" <%= sim.aspiration === 'Mind and Body' ? 'selected' : '' %>>Mind and Body (Child)</option>
+        <option value="Playtime Captain" <%= sim.aspiration === 'Playtime Captain' ? 'selected' : '' %>>Playtime Captain (Child)</option>
+        <option value="Rambunctious Scamp" <%= sim.aspiration === 'Rambunctious Scamp' ? 'selected' : '' %>>Rambunctious Scamp (Child)</option>
+        <option value="Slumber Party Animal" <%= sim.aspiration === 'Slumber Party Animal' ? 'selected' : '' %>>Slumber Party Animal (Child)</option>
+        <option value="Social Butterfly" <%= sim.aspiration === 'Social Butterfly' ? 'selected' : '' %>>Social Butterfly (Child)</option>
+        <option value="Whiz Kid" <%= sim.aspiration === 'Whiz Kid' ? 'selected' : '' %>>Whiz Kid (Child)</option>
+        <option value="Admired Icon" <%= sim.aspiration === 'Admired Icon' ? 'selected' : '' %>>Admired Icon (Teen)</option>
+        <option value="Drama Llama" <%= sim.aspiration === 'Drama Llama' ? 'selected' : '' %>>Drama Llama (Teen)</option>
+        <option value="Goal Oriented" <%= sim.aspiration === 'Goal Oriented' ? 'selected' : '' %>>Goal Oriented (Teen)</option>
+        <option value="Live Fast" <%= sim.aspiration === 'Live Fast' ? 'selected' : '' %>>Live Fast (Teen)</option>
+      </select>
+    </div>
+    <div>
+      <label for="fashionStyle">Fashion Style:</label>
+      <input type="text" name="fashionStyle" id="fashionStyle" value="<%= sim.fashionStyle %>" />
+    </div>
+    <div>
+      <label for="partner">Partner(s):</label>
+      <input type="text" name="partner" id="partner" value="<%= sim.partner %>" />
+    </div>
+    <div>
+      <label for="comments">Comments:</label>
+      <textarea name="comments" id="comments"><%= sim.comments %></textarea>
+    </div>
+    <button type="submit">Update Sim</button>
+  </form>
 </body>
 </html>
