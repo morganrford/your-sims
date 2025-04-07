@@ -5,10 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/stylesheets/stylesheet.css" />
     <title>Edit Your Sim</title>
+    <link rel="icon" type="image/x-icon" href="/assets/plumbob.png">
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
+    <section class="content">
+    <div>
  <h1>Edit <%= sim.name %> </h1>
+ </div>
  <form action="/users/<%= user._id %>/sims/<%= sim._id %>?_method=PUT" method="POST">
     <div>
       <label for="name">Name: (required)</label>
@@ -44,8 +48,10 @@
         <option value="Werewolf" <%= sim.lifeStage === 'Werewolf' ? 'selected' : '' %>>Werewolf</option>
        </select>
     </div>
+    <div>
       <label for="sexuality">Sexuality: (required)</label>
       <input type="text" name="sexuality" id="sexuality" value="<%= sim.sexuality %>" required />
+    </div>
     <div>
       <label for="world">World:</label>
       <select id="world" name="world">
@@ -127,7 +133,7 @@
       </select>
     </div>
     <div>
-      <label for="personalityTraits">Personality Traits:</label>
+      <label for="personalityTraits">Traits:</label>
       <input type="text" name="personalityTraits" id="personalityTraits" value="<%= sim.personalityTraits %>" />
     </div>
     <div>
@@ -234,7 +240,14 @@
       <label for="comments">Comments:</label>
       <textarea name="comments" id="comments"><%= sim.comments %></textarea>
     </div>
+    <div>
     <button type="submit">Update Sim</button>
+  </div>
   </form>
+</div>
+    </section>
 </body>
+<footer>
+    <p>© Morgan Ford 2025</p>
+</footer>
 </html>

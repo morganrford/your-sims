@@ -1,19 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/stylesheets/stylesheet.css" />
     <title>Users</title>
-</head>
-<body>
+    <link rel="icon" type="image/x-icon" href="/assets/plumbob.png" />
+  </head>
+  <body>
     <%- include('../partials/_navbar.ejs') %>
-    
-    <% users.forEach((user) => { %>
-
-        <a href="/users/<%=user._id%>"> <%= user.username %> </a>
-<!-- link not working -->
-
-  <% }) %>
-</body>
+    <section class="content">
+      <div>
+        <h1>Browse Users</h1>
+      </div>
+      <div>
+        <ul>
+          <% users.forEach((user) => { %>
+          <li>
+            <a href="/users/<%=user._id%>"> <%= user.username %> </a>
+          </li>
+          <% }) %>
+        </ul>
+      </div>
+    </section>
+  </body>
+  <footer>
+    <p>© Morgan Ford 2025</p>
+  </footer>
 </html>

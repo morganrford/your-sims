@@ -4,27 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/stylesheets/stylesheet.css" />
-    <title>Home</title>
+    <title><%= user.username %></title>
     <link rel="icon" type="image/x-icon" href="/assets/plumbob.png" />
   </head>
   <body>
-    <%- include('./partials/_navbar.ejs') %>
+    <%- include('../partials/_navbar.ejs') %>
     <section class="content">
       <div>
-        <h1>Welcome to Your Sims!</h1>
-      </div>
-      <div>
-        <h3>Other Users Sims</h3>
+        <h1><%= user.username %></h1>
       </div>
       <div>
         <ul>
-          <% users.forEach((user) => { %> <% user.sims.forEach((sim) => { %>
-          <a href="/users/<%= user._id %>/<%= sim._id %>"><%= sim.name %></a>
-          <% }) %> <% }) %>
+          <% sims.forEach((sim) => { %>
+          <li>
+            <a href="/users/<%=user._id%>/<%=sim._id%>"> <%= sim.name %> </a>
+          </li>
+          <% }) %>
         </ul>
-      </div>
-      <div>
-        <p><a href="/users">Browse Users</a></p>
       </div>
     </section>
   </body>

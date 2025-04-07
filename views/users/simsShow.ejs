@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/stylesheet.css" />
+    <title><%= sim.name %></title>
+    <link rel="icon" type="image/x-icon" href="/assets/plumbob.png" />
+  </head>
+  <body>
+      <%- include('../partials/_navbar.ejs') %>
+    <section class="content">
+      <div>
+        <h1><%= sim.name %></h1>
+      </div>
+      <div>
+        <img src="<%= sim.photo %>" alt="<%= sim.name %>" width="500px" />
+      </div>
+      <div>
+        <h3>Life Stage:</h3><p><%= sim.lifeStage %></p>
+        <h3>Occult:</h3><p><%= sim.occult %></p>
+        <h3>Sexuality:</h3> <p><%= sim.sexuality %></p>
+        <h3>World:</h3> <p><%= sim.world %></p>
+        <h3>Career:</h3> <p><%= sim.career %></p>
+        <h3>Traits:</h3> <p><%= sim.personalityTraits %></p>
+        <h3>Aspiration:</h3> <p><%= sim.aspiration %></p>
+        <h3>Partner:</h3> <p><%= sim.partner %></p>
+        <h3>Fashion Style:</h3> <p><%= sim.fashionStyle %></p>
+        <h3>Comments:</h3> <p><%= sim.comments %></p>
+      </div>
+    </section>
+  </body>
+  <footer>
+    <p>© Morgan Ford 2025</p>
+  </footer>
+</html>
