@@ -71,5 +71,9 @@ I wanted to give this website a Sims 4 themed color palette, blue like the text 
 
 * Light Green Text #E6F9C8
 
+### Planning Materials
+
+[Trello Board](https://trello.com/b/Q4E7RWq0/your-sims)
+
 # Dag dag!
 ![Plumbob](./public/assets/plumbob.png)
