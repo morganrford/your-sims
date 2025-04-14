@@ -4,31 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/stylesheets/stylesheet.css" />
-    <title>Home</title>
+    <title>Your Sims Now</title>
     <link rel="icon" type="image/x-icon" href="/assets/plumbob.png" />
   </head>
   <body>
     <%- include('./partials/_navbar.ejs') %>
     <section class="content">
       <div>
-        <h1>Welcome to Your Sims!</h1>
+        <h1>Welcome to Your Sims Now!</h1>
       </div>
       <div>
-        <h3>Other Users Sims</h3>
-      </div>
-      <div>
-        <ul>
           <% users.forEach((user) => { %> <% user.sims.forEach((sim) => { %>
-          <a href="/users/<%= user._id %>/<%= sim._id %>"><%= sim.name %></a>
+          <a href="/users/<%= user._id %>/<%= sim._id %>"><img src="<%= sim.photo %>" alt="<%= sim.name %>" width="400px"></a>
           <% }) %> <% }) %>
-        </ul>
-      </div>
-      <div>
-        <p><a href="/users">Browse Users</a></p>
       </div>
     </section>
   </body>
   <footer>
-    <p>© Morgan Ford 2025</p>
+    <p>© 2025 Your Sims Now</p>
   </footer>
 </html>

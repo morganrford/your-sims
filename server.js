@@ -8,8 +8,6 @@ dotenv.config();
 const mongoose = require("mongoose");
 const app = express();
 const PORT = process.env.PORT || 4000;
-// const Sim = require('./models/schema');
-// const req = require('express/lib/request');
 const session = require("express-session");
 const User = require("./models/schema.js");
 
