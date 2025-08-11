@@ -16,7 +16,7 @@
       <div>
         <a href="/users/<%= user._id %>/sims/new">Add A New Sim</a>
       </div>
-      <div>
+      <div class="gallery">
           <% sims.forEach((sim) => { %>
             <a href="/users/<%= user._id %>/sims/<%= sim._id %>">
               <img src="<%= sim.photo %>" alt="<%= sim.name %>" width="300px">

@@ -13,7 +13,7 @@
       <div>
         <h1>Welcome to Your Sims Now!</h1>
       </div>
-      <div>
+      <div class="gallery">
           <% users.forEach((user) => { %> <% user.sims.forEach((sim) => { %>
           <a href="/users/<%= user._id %>/<%= sim._id %>"><img src="<%= sim.photo %>" alt="<%= sim.name %>" width="400px"></a>
           <% }) %> <% }) %>
